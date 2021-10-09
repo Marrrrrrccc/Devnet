@@ -63,8 +63,8 @@ while (True) : #Loop will continue until the user chooses 'n' or to stop the pro
         continue
 
 
-    #Condition to end the program if the user enters "n" or "N"
-    
+    #Loop to end the program if the user enters "Y" or "y" or "N" or "n"
+    #Error handling for "Y" or "N" input
     while (True):
         end = input("\nDo you want to display another? (Y/N)")
         if (end.lower() == "y"):
