@@ -64,17 +64,28 @@ while (True) : #Loop will continue until the user chooses 'n' or to stop the pro
 
 
     #Condition to end the program if the user enters "n" or "N"
-    end = input("\nDo you want to display another? (Y/N)")
-    if (end.lower() == "n"):
-        print("\nThank you for using our application.")
-        print("""\n\t==========================================
-        |\tThis program was made by: \t |\t
-        |\t   Marc Ricson Ricafort, \t |\t
-        |\t     Stanley Orong III, \t |\t           
-        |\t   and Cyril Ken Verdad \t |\t
-        |\t        From 4-ITG \t\t |
-        ==========================================""")
-        break
-    else:
-        print("----------------------------------------------")
+    
+    while (True):
+        end = input("\nDo you want to display another? (Y/N)")
+        if (end.lower() == "y"):
+            print("\n==========================================")
+            break
+        elif (end.lower() == "n"):
+            print("\nThank you for using our application.")
+            print("""\n\t    ======================================
+            |\t  This program was made by: \t |\t
+            |\t     Marc Ricson Ricafort, \t |\t
+            |\t       Stanley Orong III, \t |\t           
+            |\t     and Cyril Ken Verdad \t |\t
+            |\t          From 4-ITG \t\t |
+            ======================================""")
+            break
+        else:
+            print("\n================Please enter only Y or N================")
+            continue
+
+    #Condition to repeat program from the top
+    if (end.lower() == "y"):
         continue
+    else:
+        break
