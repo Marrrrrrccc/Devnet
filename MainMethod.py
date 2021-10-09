@@ -37,7 +37,7 @@ while (True) :#Loop will continue until the user chooses 'n' or to stop the prog
     elif choice == '9':
         print("Your country\'s capital is " + ip['country_capital'])
     elif choice =='10':
-        print("Your country\'s population is " + ip['country_population'])
+        print("Your country\'s population is {}" .format(ip['country_population']))
     elif choice =='11':
         print("Your location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
         print("Your ip address is " + ip['ip'])
