@@ -1,6 +1,5 @@
 #importing get from requests module for API calls
 from requests import get
-#version 1
 loc = get('https://ipapi.co/json/') #calling the api
 ip = loc.json() #transforing it to json format to print it in the terminal
 while (True) :#Loop will continue until the user chooses 'n' or to stop the program
