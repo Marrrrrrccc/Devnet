@@ -13,7 +13,11 @@ choices = StringVar()
 #funtions
 def click(): #onclick function
     enteredtext = textin.get()
-    mylabel = Message(window, text = ' ')
+    enteredtext1 = ipAddress.get()
+    inputtedIpaddress = 'https://ipapi.co/json/' + enteredtext1
+    loc1 = get(inputtedIpaddress)
+    ip1 = loc1.json()
+
     
     if enteredtext == '1':
         mylabel = Label(window, text = "\nYour location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
@@ -50,7 +54,9 @@ def click(): #onclick function
         mylabel = Label(window, text = "\n================Please enter only a number from 1 to 11.================")
         
     mylabel.pack()
-
+def placeholder(event,text):
+    text.configure(state='normal')
+    text.delete('0', END)
 #label/ message (static)
 Message1 = Message(window, textvariable = var, width = 1000)
 Message1.pack()
@@ -75,8 +81,18 @@ choices.set("\nWhat do you want to display? \n"
                    "10. Country Population\n"
                    "11. Display all of the above\n")
 #input
-textin = Entry(window, width= 10)
+textin = Entry(window, width= 30)
+textin.insert(0, "Enter a number from 1 to 11")
+textin.configure(state='disabled')
+textin.bind('<Button-1>', lambda e: placeholder(e,textin))
 textin.pack()
+
+#placeholder
+ipAddress = Entry(window, width= 30)
+ipAddress.insert(0, "Enter your ip address")
+ipAddress.configure(state='disabled')
+ipAddress.bind('<Button-1>', lambda e: placeholder(e,ipAddress))
+ipAddress.pack()
 
 #button 
 submit = Button(window, text= "submit", width = 7 , command = click)
