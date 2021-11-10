@@ -14,12 +14,27 @@ choices = StringVar()
 def click(): #onclick function
     enteredtext = textin.get()
     enteredtext1 = ipAddress.get()
-    inputtedIpaddress = 'https://ipapi.co/json/' + enteredtext1
-    loc1 = get(inputtedIpaddress)
-    ip1 = loc1.json()
-
-    
-    if enteredtext == '1':
+    # if enteredtext1 is not empty then use it in the api call
+    # error to be fixed
+    # nakukuha naman ip address
+    #pero may error
+    # if enteredtext1:
+    #     url = 'https://ipapi.co/' + enteredtext1 + '/json/'
+    #     loc = get(url)
+    #     ip1=loc.json()
+    #     #print all the necessary data from the api call
+    #     var.set(ip1['region'])
+    #                       # text="\nYour location is  " + ip1['city'] + ", " + ip1['region'] + ", " + ip1['country_name']
+    #                       #      + "\nYour ip address is " + ip1['ip']
+    #                       #      + "\nYour internet service provider is " + ip1['org']
+    #                       #      + '\nYour country\'s currency is ' + ip1['currency_name']
+    #                       #      + '\nYour country\'s languages is ' + ip1['languages']
+    #                       #      + "\nYour autonomous system number is " + ip1['asn']
+    #                       #      + "\nYour country\'s Timezone is " + ip1['timezone']
+    #                       #      + "\nYour zip code is " + ip1['postal']
+    #                       #      + "\nYour country\'s capital is " + ip1['country_capital']
+    #                       #      + "\nYour country\'s population is {}".format(ip1['country_population']))
+    elif enteredtext == '1':
         mylabel = Label(window, text = "\nYour location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
     elif enteredtext == '2':
         mylabel = Label(window, text = "\nYour ip address is " + ip['ip'])
