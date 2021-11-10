@@ -34,7 +34,7 @@ def click(): #onclick function
     #                       #      + "\nYour zip code is " + ip1['postal']
     #                       #      + "\nYour country\'s capital is " + ip1['country_capital']
     #                       #      + "\nYour country\'s population is {}".format(ip1['country_population']))
-    elif enteredtext == '1':
+    if enteredtext == '1':
         mylabel = Label(window, text = "\nYour location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
     elif enteredtext == '2':
         mylabel = Label(window, text = "\nYour ip address is " + ip['ip'])
