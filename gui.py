@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 #importing get from requests module for API calls
 from requests import get
 loc = get('https://ipapi.co/json/') #Fetching data from the api
@@ -35,27 +36,27 @@ def click(): #onclick function
     #                       #      + "\nYour country\'s capital is " + ip1['country_capital']
     #                       #      + "\nYour country\'s population is {}".format(ip1['country_population']))
     if enteredtext == '1':
-        mylabel = Label(window, text = "\nYour location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
+        messagebox.showinfo("IPGetR", "\nYour location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
     elif enteredtext == '2':
-        mylabel = Label(window, text = "\nYour ip address is " + ip['ip'])
+        messagebox.showinfo("IPGetR", "\nYour ip address is " + ip['ip'])
     elif enteredtext == '3':
-        mylabel = Label(window, text = "\nYour internet service provider is " + ip['org'])
+        messagebox.showinfo("IPGetR", "\nYour internet service provider is " + ip['org'])
     elif enteredtext == '4':
-        mylabel = Label(window, text = '\nYour country\'s currency is ' + ip['currency_name'])
+        messagebox.showinfo("IPGetR", '\nYour country\'s currency is ' + ip['currency_name'])
     elif enteredtext == '5':
-        mylabel = Label(window, text = '\nYour country\'s languages is ' + ip['languages'])
+        messagebox.showinfo("IPGetR", '\nYour country\'s languages is ' + ip['languages'])
     elif enteredtext == '6':
-        mylabel = Label(window, text = "\nYour autonomous system number is " + ip['asn'])
+        messagebox.showinfo("IPGetR", "\nYour autonomous system number is " + ip['asn'])
     elif enteredtext == '7':
-        mylabel = Label(window, text = "\nYour country\'s Timezone is " + ip['timezone'])
+        messagebox.showinfo("IPGetR", "\nYour country\'s Timezone is " + ip['timezone'])
     elif enteredtext == '8':
-        mylabel = Label(window, text = "\nYour zip code is "+ ip['postal'])
+        messagebox.showinfo("IPGetR", "\nYour zip code is "+ ip['postal'])
     elif enteredtext == '9':
-        mylabel = Label(window, text = "\nYour country\'s capital is " + ip['country_capital'])
+        messagebox.showinfo("IPGetR", "\nYour country\'s capital is " + ip['country_capital'])
     elif enteredtext =='10':
-        mylabel = Label(window, text = "\nYour country\'s population is {}" .format(ip['country_population']))
+        messagebox.showinfo("IPGetR", "\nYour country\'s population is {}" .format(ip['country_population']))
     elif enteredtext =='11':
-        mylabel = Message(window, text = "\nYour location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name']
+        messagebox.showinfo("IPGetR",  "\nYour location is  " + ip['city'] + ", " + ip['region'] + ", " + ip['country_name']
             +"\nYour ip address is " + ip['ip']
             +"\nYour internet service provider is " + ip['org']
             +'\nYour country\'s currency is ' + ip['currency_name']
@@ -66,9 +67,9 @@ def click(): #onclick function
             +"\nYour country\'s capital is " + ip['country_capital']
             +"\nYour country\'s population is {}" .format(ip['country_population']))
     else: 
-        mylabel = Label(window, text = "\n================Please enter only a number from 1 to 11.================")
+        messagebox.showerror('IPGetR',"=Please enter only a number from 1 to 11.")
         
-    mylabel.pack()
+
 def placeholder(event,text):
     text.configure(state='normal')
     text.delete('0', END)
