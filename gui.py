@@ -68,16 +68,16 @@ Label(innerWindow, text = "The program where you can get information from your I
 Label(innerWindow, text='\n\nYour Information', font=("Helvetica bold", 14), anchor='w').pack(fill='both')
 
 #Content
-Label(innerWindow, text='Current Location: ' +  str(currentLoc), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Public IP Address: ' + str(publicIP), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Internet Service Provider (ISP): ' + str(serviceProvider), font=("Helvetica", 14), anchor='w', wraplength=innerWindow.winfo_width()).pack(fill='both')
-Label(innerWindow, text='Currency: ' + str(currency), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Languages: ' + str(languages), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Autonomous System Number: ' + str(asn), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Timezone: ' + str(timezone), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Zip Code: ' + str(zipCode), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text="Country's Capital: " + str(capital), font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text="Countery's Population: " + str(population), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text='Current Location: ' +  str(currentLoc), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text='Public IP Address: ' + str(publicIP), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text='Internet Service Provider (ISP): ' + str(serviceProvider), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text='Currency: ' + str(currency), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text='Languages: ' + str(languages), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text='Autonomous System Number: ' + str(asn), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text='Timezone: ' + str(timezone), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text='Zip Code: ' + str(zipCode), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text="Country's Capital: " + str(capital), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, text="Countery's Population: " + str(population), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
 
 # #input
 # textin = Entry(window, width= 30)
