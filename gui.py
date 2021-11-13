@@ -8,6 +8,7 @@ from requests import get
 def getInformation(): #onclick function
     loc = get('https://ipapi.co/json/') #Fetching data from the api
     ip = loc.json() #Formatting to json format
+
     #referencing global variables
     global currentLoc
     global currentLoc
@@ -20,6 +21,7 @@ def getInformation(): #onclick function
     global zipCode
     global capital
     global population
+
     #setting variable information
     currentLoc = ip['city'] + ", " + ip['region'] + ", " + ip['country_name']
     publicIP = ip['ip']
@@ -41,7 +43,7 @@ header = StringVar() #message textvariable
 choices = StringVar()
 window.resizable(0,0) #Sets the window to unresizable
 window.geometry('570x600') #Adds a fixed width and height
-innerWindow= Frame(window, relief= 'sunken') #Frame used to add padding between window and text
+innerWindow= Frame(window, relief= 'sunken') #Frame used to add virtual padding between window and text
 innerWindow.pack(fill= BOTH, expand= True, padx= 75, pady=20)
 
 #variables
@@ -66,17 +68,16 @@ Label(innerWindow, text = "The program where you can get information from your I
 Label(innerWindow, text='\n\nYour Information', font=("Helvetica bold", 14), anchor='w').pack(fill='both')
 
 #Content
-Label(innerWindow, text='Current Location: ' + currentLoc, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Public IP Address: ' + publicIP, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Internet Service Provider (ISP): ' + serviceProvider, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Currency: ' + currency, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Languages: ' + languages, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Autonomous System Number: ' + asn, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Timezone: ' + timezone, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text='Zip Code: ' + zipCode, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text="Country's Capital: " + capital, font=("Helvetica", 14), anchor='w').pack(fill='both')
-Label(innerWindow, text="Countery's Population: " + population, font=("Helvetica", 14), anchor='w').pack(fill='both')
-
+Label(innerWindow, text='Current Location: ' +  str(currentLoc), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text='Public IP Address: ' + str(publicIP), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text='Internet Service Provider (ISP): ' + str(serviceProvider), font=("Helvetica", 14), anchor='w', wraplength=innerWindow.winfo_width()).pack(fill='both')
+Label(innerWindow, text='Currency: ' + str(currency), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text='Languages: ' + str(languages), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text='Autonomous System Number: ' + str(asn), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text='Timezone: ' + str(timezone), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text='Zip Code: ' + str(zipCode), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text="Country's Capital: " + str(capital), font=("Helvetica", 14), anchor='w').pack(fill='both')
+Label(innerWindow, text="Countery's Population: " + str(population), font=("Helvetica", 14), anchor='w').pack(fill='both')
 
 # #input
 # textin = Entry(window, width= 30)
