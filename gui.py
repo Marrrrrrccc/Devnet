@@ -10,6 +10,7 @@ window = Tk()
 window.title('IPGetR')
 var = StringVar() #message textvariable
 choices = StringVar()
+window.resizable(0,0)
 
 #funtions
 def click(): #onclick function
