@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter.ttk import Label
 #importing get from requests module for API calls
 from requests import get
 loc = get('https://ipapi.co/json/') #Fetching data from the api
@@ -8,11 +9,12 @@ ip = loc.json() #Formatting to json format to print it in the terminal
 #main 
 window = Tk()
 window.title('IPGetR')
-var = StringVar() #message textvariable
+header = StringVar() #message textvariable
 choices = StringVar()
 window.resizable(0,0) #Sets the window to unresizable
 window.geometry('550x600') #Adds a fixed width and height
-
+innerWindow= Frame(window, relief= 'sunken') #Frame used to add padding between window and text
+innerWindow.pack(fill= BOTH, expand= True, padx= 10, pady=20)
 #funtions
 def click(): #onclick function
     enteredtext = textin.get()
@@ -75,16 +77,17 @@ def click(): #onclick function
 def placeholder(event,text):
     text.configure(state='normal')
     text.delete('0', END)
-#label/ message (static)
-Message1 = Message(window, textvariable = var, width = 1000)
-Message1.pack()
-Message2 = Message(window, textvariable = choices,  width= 1000)
-Message2.pack()
 
-var.set("""
-        |   WELCOME TO IPGetR   |
-        |THE PROGRAM WHERE YOU CAN GET INFORMATION FROM YOUR IP |
-        """)
+
+#label/ message (static)
+# Message1 = Message(window, textvariable = header, width = 1000, ).pack()
+Label(innerWindow, text = "Welcome to IPGetR", font = ("Helvetica bold", 25)).pack()
+Label(innerWindow, text = "The program where you can get information from your IP!", font = ("Helvetica", 14)).pack()
+
+Message2 = Message(innerWindow, textvariable = choices,  width= 1000).pack()
+
+
+
 
 choices.set("\nWhat do you want to display? \n"
                    "1. Current Location \n"
