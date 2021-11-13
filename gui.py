@@ -10,7 +10,8 @@ window = Tk()
 window.title('IPGetR')
 var = StringVar() #message textvariable
 choices = StringVar()
-window.resizable(0,0)
+window.resizable(0,0) #Sets the window to unresizable
+window.geometry('550x600') #Adds a fixed width and height
 
 #funtions
 def click(): #onclick function
