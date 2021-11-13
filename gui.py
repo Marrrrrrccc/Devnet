@@ -1,10 +1,13 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter.ttk import Label
+import tkinter as tk
 #importing get from requests module for API calls
 from requests import get
 
 #functions
+
+#Initial method to get Information
 def getInformation(): #onclick function
     loc = get('https://ipapi.co/json/') #Fetching data from the api
     ip = loc.json() #Formatting to json format
@@ -13,6 +16,7 @@ def getInformation(): #onclick function
     global currentLoc
     global currentLoc
     global publicIP
+    global specificIP
     global serviceProvider
     global currency
     global languages
@@ -23,18 +27,60 @@ def getInformation(): #onclick function
     global population
 
     #setting variable information
-    currentLoc = ip['city'] + ", " + ip['region'] + ", " + ip['country_name']
-    publicIP = ip['ip']
-    serviceProvider = ip['org']
-    currency = ip['currency_name']
-    languages = ip['languages']
-    asn = ip['asn']
-    timezone = ip['timezone']
-    zipCode = ip['postal']
-    capital = ip['country_capital']
-    population = ip['country_population']
+    currentLoc.set('Current Location: ' + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
+    publicIP.set('Public IP Address: ' + ip['ip'])
+    specificIP = ip['ip']
+    serviceProvider.set('Internet Service Provider: ' + ip['org'])
+    currency.set('Currency: ' + ip['currency_name'])
+    languages.set('Languages: ' + ip['languages'])
+    asn.set('Autonomouss System Number: ' + ip['asn'])
+    timezone.set('Timezone: ' + ip['timezone'])
+    zipCode.set('Zipcode: ' + ip['postal'])
+    capital.set("Country's Capital: " + ip['country_capital'])
+    population.set("Country's Population: " + str(ip['country_population']))
         
+#Get information from custom IP
+def getCustomInformation(): #onclick function
+    newIP = str(customIP.get())
+    loc = get('https://ipapi.co/' + newIP + '/json') #Fetching data from the api
+    ip = loc.json() #Formatting to json format
 
+    #referencing global variables
+    global currentLoc
+    global currentLoc
+    global publicIP
+    global specificIP
+    global serviceProvider
+    global currency
+    global languages
+    global asn
+    global timezone
+    global zipCode
+    global capital
+    global population
+
+    #setting variable information
+    currentLoc.set('Current Location: ' + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
+    publicIP.set('Public IP Address: ' + ip['ip'])
+    specificIP = ip['ip']
+    serviceProvider.set('Internet Service Provider: ' + ip['org'])
+    currency.set('Currency: ' + ip['currency_name'])
+    languages.set('Languages: ' + ip['languages'])
+    asn.set('Autonomouss System Number: ' + ip['asn'])
+    timezone.set('Timezone: ' + ip['timezone'])
+    zipCode.set('Zipcode: ' + ip['postal'])
+    capital.set("Country's Capital: " + ip['country_capital'])
+    population.set("Country's Population: " + str(ip['country_population']))
+        
+#Sets a placeholder var
+def placeholder(event,text):
+    text.configure(state='normal')
+    text.delete('0', END)
+
+
+#Clears the Entry Text
+def clearText():
+    customIP.delete('0', END)
 
 #main 
 window = Tk()
@@ -47,16 +93,17 @@ innerWindow= Frame(window, relief= 'sunken') #Frame used to add virtual padding 
 innerWindow.pack(fill= BOTH, expand= True, padx= 75, pady=20)
 
 #variables
-currentLoc = ""
-publicIP = ""
-serviceProvider = ""
-currency = ""
-languages = ""
-asn = ""
-timezone = ""
-zipCode = ""
-capital = ""
-population = ""
+currentLoc = StringVar()
+publicIP = StringVar()
+serviceProvider = StringVar()
+currency = StringVar()
+languages = StringVar()
+asn = StringVar()
+timezone = StringVar()
+zipCode = StringVar()
+capital = StringVar()
+population = StringVar()
+specificIP = ""
 
 #Method to get initial information
 getInformation()
@@ -68,44 +115,28 @@ Label(innerWindow, text = "The program where you can get information from your I
 Label(innerWindow, text='\n\nYour Information', font=("Helvetica bold", 14), anchor='w').pack(fill='both')
 
 #Content
-Label(innerWindow, text='Current Location: ' +  str(currentLoc), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text='Public IP Address: ' + str(publicIP), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text='Internet Service Provider (ISP): ' + str(serviceProvider), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text='Currency: ' + str(currency), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text='Languages: ' + str(languages), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text='Autonomous System Number: ' + str(asn), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text='Timezone: ' + str(timezone), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text='Zip Code: ' + str(zipCode), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text="Country's Capital: " + str(capital), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
-Label(innerWindow, text="Countery's Population: " + str(population), font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = currentLoc, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = publicIP, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = serviceProvider, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = currency, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = languages, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = asn, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = timezone, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = zipCode, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = capital, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+Label(innerWindow, textvariable = population, font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
 
-# #input
-# textin = Entry(window, width= 30)
-# textin.insert(0, "Enter a number from 1 to 11")
-# textin.configure(state='disabled')
-# textin.bind('<Button-1>', lambda e: placeholder(e,textin))
-# textin.pack()
-# choices.set("\nWhat do you want to display? \n"
-#                    "1. Current Location \n"
-#                    "2. Public Ip Address \n"
-#                    "3. Internet Service Provider \n"
-#                    "4. Currency\n"
-#                    "5. Languages\n"
-#                    "6. Autonomous system number\n"
-#                    "7. Timezone\n"
-#                    "8. Zip code\n"
-#                    "9. Country capital\n"
-#                    "10. Country Population\n"
-#                    "11. Display all of the above\n")
-# #placeholder
-# ipAddress = Entry(window, width= 30)
-# ipAddress.insert(0, "Enter your ip address")
-# ipAddress.configure(state='disabled')
-# ipAddress.bind('<Button-1>', lambda e: placeholder(e,ipAddress))
-# ipAddress.pack()
+#input
+Label(innerWindow, text="\n\n\nSet a custom IP Address:", font=("Helvetica", 14), anchor='w', wraplength=420).pack(fill='both')
+customIP = Entry(innerWindow, width=300)
+customIP.insert(0, str(specificIP))
+customIP.configure(state='disabled')
+customIP.bind('<Button-1>', lambda e: placeholder(e,customIP))
+customIP.pack()
 
-#button 
-# submit = Button(window, text= "submit", width = 7 , command = click)
-# submit.pack()
-
+#buttons
+submit = Button(innerWindow, text="Submit", width=7, command=getCustomInformation)
+submit.pack(side=tk.RIGHT)
+clear = Button(innerWindow, text="Clear", width=7, command=clearText)
+clear.pack(side=tk.RIGHT)
 window.mainloop()
