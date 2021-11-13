@@ -12,6 +12,7 @@ def getInformation(): #onclick function
     loc = get('https://ipapi.co/json/') #Fetching data from the api
     ip = loc.json() #Formatting to json format
 
+    print(ip)
     #referencing global variables
     global currentLoc
     global currentLoc
@@ -26,18 +27,32 @@ def getInformation(): #onclick function
     global capital
     global population
 
-    #setting variable information
-    currentLoc.set('Current Location: ' + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
-    publicIP.set('Public IP Address: ' + ip['ip'])
-    specificIP = ip['ip']
-    serviceProvider.set('Internet Service Provider: ' + ip['org'])
-    currency.set('Currency: ' + ip['currency_name'])
-    languages.set('Languages: ' + ip['languages'])
-    asn.set('Autonomouss System Number: ' + ip['asn'])
-    timezone.set('Timezone: ' + ip['timezone'])
-    zipCode.set('Zipcode: ' + ip['postal'])
-    capital.set("Country's Capital: " + ip['country_capital'])
-    population.set("Country's Population: " + str(ip['country_population']))
+    #checks if API is available
+    try:
+        #setting variable information
+        currentLoc.set('Current Location: ' + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
+        publicIP.set('Public IP Address: ' + ip['ip'])
+        specificIP = ip['ip']
+        serviceProvider.set('Internet Service Provider: ' + ip['org'])
+        currency.set('Currency: ' + ip['currency_name'])
+        languages.set('Languages: ' + ip['languages'])
+        asn.set('Autonomouss System Number: ' + ip['asn'])
+        timezone.set('Timezone: ' + ip['timezone'])
+        zipCode.set('Zipcode: ' + ip['postal'])
+        capital.set("Country's Capital: " + ip['country_capital'])
+        population.set("Country's Population: " + str(ip['country_population']))
+    except:
+        currentLoc.set("Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+        publicIP.set("")
+        serviceProvider.set("")
+        currency.set("")
+        languages.set("")
+        asn.set("")
+        timezone.set("")
+        zipCode.set("")
+        capital.set("")
+        population.set("")
+        
         
 #Get information from custom IP
 def getCustomInformation(): #onclick function
@@ -59,18 +74,31 @@ def getCustomInformation(): #onclick function
     global capital
     global population
 
-    #setting variable information
-    currentLoc.set('Current Location: ' + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
-    publicIP.set('Public IP Address: ' + ip['ip'])
-    specificIP = ip['ip']
-    serviceProvider.set('Internet Service Provider: ' + ip['org'])
-    currency.set('Currency: ' + ip['currency_name'])
-    languages.set('Languages: ' + ip['languages'])
-    asn.set('Autonomouss System Number: ' + ip['asn'])
-    timezone.set('Timezone: ' + ip['timezone'])
-    zipCode.set('Zipcode: ' + ip['postal'])
-    capital.set("Country's Capital: " + ip['country_capital'])
-    population.set("Country's Population: " + str(ip['country_population']))
+    #checks if API is available
+    try:
+        #setting variable information
+        currentLoc.set('Current Location: ' + ip['city'] + ", " + ip['region'] + ", " + ip['country_name'])
+        publicIP.set('Public IP Address: ' + ip['ip'])
+        specificIP = ip['ip']
+        serviceProvider.set('Internet Service Provider: ' + ip['org'])
+        currency.set('Currency: ' + ip['currency_name'])
+        languages.set('Languages: ' + ip['languages'])
+        asn.set('Autonomouss System Number: ' + ip['asn'])
+        timezone.set('Timezone: ' + ip['timezone'])
+        zipCode.set('Zipcode: ' + ip['postal'])
+        capital.set("Country's Capital: " + ip['country_capital'])
+        population.set("Country's Population: " + str(ip['country_population']))
+    except:
+        currentLoc.set("Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+        publicIP.set("")
+        serviceProvider.set("")
+        currency.set("")
+        languages.set("")
+        asn.set("")
+        timezone.set("")
+        zipCode.set("")
+        capital.set("")
+        population.set("")
         
 #Sets a placeholder var
 def placeholder(event,text):
