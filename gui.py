@@ -89,7 +89,7 @@ def getCustomInformation(): #onclick function
         capital.set("Country's Capital: " + ip['country_capital'])
         population.set("Country's Population: " + str(ip['country_population']))
     except:
-        currentLoc.set("Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+        currentLoc.set("Invalid IP address/Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
         publicIP.set("")
         serviceProvider.set("")
         currency.set("")
@@ -116,7 +116,7 @@ window.title('IPGetR')
 header = StringVar() #message textvariable
 choices = StringVar()
 window.resizable(0,0) #Sets the window to unresizable
-window.geometry('570x600') #Adds a fixed width and height
+window.geometry('570x675') #Adds a fixed width and height
 innerWindow= Frame(window, relief= 'sunken') #Frame used to add virtual padding between window and text
 innerWindow.pack(fill= BOTH, expand= True, padx= 75, pady=20)
 
