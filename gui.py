@@ -42,7 +42,7 @@ def getInformation(): #onclick function
         capital.set("Country's Capital: " + ip['country_capital'])
         population.set("Country's Population: " + str(ip['country_population']))
     except:
-        currentLoc.set("Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+        currentLoc.set("Invalid IP address/Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
         publicIP.set("")
         serviceProvider.set("")
         currency.set("")
