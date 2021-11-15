@@ -116,7 +116,7 @@ window.title('IPGetR')
 header = StringVar() #message textvariable
 choices = StringVar()
 window.resizable(0,0) #Sets the window to unresizable
-window.geometry('570x675') #Adds a fixed width and height
+window.geometry('570x700') #Adds a fixed width and height
 innerWindow= Frame(window, relief= 'sunken') #Frame used to add virtual padding between window and text
 innerWindow.pack(fill= BOTH, expand= True, padx= 75, pady=20)
 
