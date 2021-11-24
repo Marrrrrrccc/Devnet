@@ -1,5 +1,4 @@
 from tkinter import *
-from tkinter import messagebox
 from tkinter.ttk import Label
 import tkinter as tk
 #importing get from requests module for API calls
@@ -8,7 +7,7 @@ from requests import get
 #functions
 
 #Initial method to get Information
-def getInformation(): #onclick function
+def getInformation():
     loc = get('https://ipapi.co/json/') #Fetching data from the api
     ip = loc.json() #Formatting to json format
 
