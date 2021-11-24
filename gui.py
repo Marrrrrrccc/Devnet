@@ -10,8 +10,7 @@ from requests import get
 def getInformation():
     loc = get('https://ipapi.co/json/') #Fetching data from the api
     ip = loc.json() #Formatting to json format
-
-    print(ip)
+    
     #referencing global variables
     global currentLoc
     global currentLoc
@@ -113,7 +112,6 @@ def clearText():
 window = Tk()
 window.title('IPGetR')
 header = StringVar() #message textvariable
-choices = StringVar()
 window.resizable(0,0) #Sets the window to unresizable
 window.geometry('570x700') #Adds a fixed width and height
 innerWindow= Frame(window, relief= 'sunken') #Frame used to add virtual padding between window and text
