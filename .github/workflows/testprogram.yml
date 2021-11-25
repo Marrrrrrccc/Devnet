@@ -10,8 +10,8 @@ jobs:
       run: pip install flake8
            pip install pytest
 
-    - name: run lint [flake8]
-      run: flake8
+    # - name: run lint [flake8]
+    #   run: flake8
 
     - name: run unit tests [pytest]
       run: pytest      
