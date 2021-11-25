@@ -6,7 +6,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Super-Linter
-      uses: github/super-linter@v2.1.e
+      uses: github/super-linter@v4
 
     - name: run unit tests [pytest]
       run: pytest      
