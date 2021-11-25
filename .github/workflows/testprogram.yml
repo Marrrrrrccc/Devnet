@@ -4,8 +4,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: run linter[flake8]
-        run: flake8 .
+      - name: run linter[pylint]
+        run: pylint .
 
       - name: run unit tests [pytest]
         run: pytest      
