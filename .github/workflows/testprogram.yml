@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
+    - name: install dependencies
+      run: pip install flake8
+      
     - name: run lint [flake8]
       run: flake8
 
