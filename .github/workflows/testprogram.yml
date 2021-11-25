@@ -4,10 +4,11 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: run linter[pylint]
-        run: pylint .
+    - uses: actions/checkoutev2
+    - name: Super-Linter
+      uses: github/super-linter@v2.1.e
 
-      - name: run unit tests [pytest]
-        run: pytest      
+    - name: run unit tests [pytest]
+      run: pytest      
 
 
