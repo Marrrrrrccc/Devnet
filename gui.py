@@ -158,8 +158,8 @@ specificIP = ""
 
 getInformation()
 
-#label/ message (static)
-# Title
+
+
 Label(
     innerWindow,
     text="Welcome to IPGetR",
@@ -181,7 +181,7 @@ Label(
     anchor='w').pack(
     fill='both')
 
-# Content
+
 Label(
     innerWindow,
     textvariable=currentLoc,
@@ -289,7 +289,7 @@ customIP.configure(state='disabled')
 customIP.bind('<Button-1>', lambda e: placeholder(e, customIP))
 customIP.pack()
 
-# buttons
+
 submit = Button(
     innerWindow,
     text="Submit",
