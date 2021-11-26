@@ -155,10 +155,7 @@ capital = StringVar()
 population = StringVar()
 specificIP = ""
 
-
 getInformation()
-
-
 
 Label(
     innerWindow,
