@@ -49,7 +49,8 @@ def getInformation():
     except BaseException:
         currentLoc.set("Invalid IP address/Number of API calls Exceeded. "
                        "Please try again later. \nThis Program was made by: "
-                       "\n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+                       "\n\tMarc Ricson Ricafort\n\tStanley Orong III\n\t"
+                       "Cyril Ken Verdad\n\tFrom 4-ITG")
         publicIP.set("")
         serviceProvider.set("")
         currency.set("")
@@ -106,7 +107,8 @@ def getCustomInformation():  # onclick function
     except BaseException:
         currentLoc.set("Invalid IP address/Number of API calls Exceeded."
                        " Please try again later. \nThis Program was made by: "
-                       "\n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+                       "\n\tMarc Ricson Ricafort\n\tStanley Orong III"
+                       "\n\tCyril Ken Verdad\n\tFrom 4-ITG")
         publicIP.set("")
         serviceProvider.set("")
         currency.set("")
@@ -153,7 +155,7 @@ capital = StringVar()
 population = StringVar()
 specificIP = ""
 
-# Method to get initial information
+
 getInformation()
 
 #label/ message (static)
