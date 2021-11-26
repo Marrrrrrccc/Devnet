@@ -47,7 +47,9 @@ def getInformation():
         population.set("Country's Population: " +
                        str(ip['country_population']))
     except BaseException:
-        currentLoc.set("Invalid IP address/Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+        currentLoc.set("Invalid IP address/Number of API calls Exceeded. "
+                       "Please try again later. \nThis Program was made by: "
+                       "\n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
         publicIP.set("")
         serviceProvider.set("")
         currency.set("")
@@ -102,7 +104,9 @@ def getCustomInformation():  # onclick function
         population.set("Country's Population: " +
                        str(ip['country_population']))
     except BaseException:
-        currentLoc.set("Invalid IP address/Number of API calls Exceeded. Please try again later. \nThis Program was made by: \n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
+        currentLoc.set("Invalid IP address/Number of API calls Exceeded."
+                       " Please try again later. \nThis Program was made by: "
+                       "\n\tMarc Ricson Ricafort\n\tStanley Orong III\n\tCyril Ken Verdad\n\tFrom 4-ITG")
         publicIP.set("")
         serviceProvider.set("")
         currency.set("")
